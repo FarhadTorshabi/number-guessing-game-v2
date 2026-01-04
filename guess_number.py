@@ -16,6 +16,13 @@ def choose_difficulty():
 def play_round(game_state):
     secret_number, attempts = choose_difficulty()
 
+    minimum = 1
+    maximum = 10
+    if attempts == 4:
+        maximum = 20
+    elif attempts == 3:
+        maximum = 50
+
     game_state["secret_number"] = secret_number
     game_state["attempts_left"] = attempts
     game_state["status"] = "playing"
@@ -31,7 +38,11 @@ def play_round(game_state):
             continue
         
         guess = int(guess)
-
+        
+        if guess < 1 or guess > maximum:
+            print("⚠️ Your guess is out of range.")
+            continue
+        
         if guess == game_state["secret_number"]:
             print("🎉 Correct! You guessed the number.")
             game_state["status"] = "won"
@@ -58,12 +69,29 @@ def guess_number():
         "status": "playing"
     }
 
+    wins = 0
+    losses = 0
+
+    print("🎮 Welcome to the Number Guessing Game!")
+    print("Be careful — wrong guesses cost attempts!\n")
+
     while True:
         play_round(game_state)
+
+        if game_state["status"] == "won":
+            wins += 1
+            print(f"\n🎉 You won! The number was '{game_state['secret_number']}'.")
+        elif game_state["status"] == "lost":
+            losses += 1
+            print(f"\n💀 You lost. The number was '{game_state['secret_number']}'.")
+
+        print(f"\n📊 Score → Wins: {wins} | Losses: {losses}")
+
         update_scoreboard(game_state)
 
         again = input("Play again? (y/n): ").lower()
         if again != "y":
+            print("\nThanks for playing 👋")
             break
 
 guess_number()
