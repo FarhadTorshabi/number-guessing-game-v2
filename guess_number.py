@@ -1,4 +1,17 @@
 import random
+import json
+import os
+
+def load_scoreboard(filename="scoreboard.json"):
+    if not os.path.exists(filename):
+        return {"games" : 0, "wins" : 0, "losses" : 0}
+    
+    with open(filename, "r") as file:
+        return json.load(file)
+
+def save_scoreboard(scoreboard, filename="scoreboard.json"):
+    with open(filename, "w") as file:
+        json.dump(scoreboard, file)
 
 def choose_difficulty():
     while True:
@@ -42,7 +55,7 @@ def play_round(game_state):
         if guess < 1 or guess > maximum:
             print("⚠️ Your guess is out of range.")
             continue
-        
+
         if guess == game_state["secret_number"]:
             print("🎉 Correct! You guessed the number.")
             game_state["status"] = "won"
@@ -59,8 +72,16 @@ def play_round(game_state):
     game_state["status"] = "lost"
 
 
-def update_scoreboard(game_state):
-    pass
+def update_scoreboard(game_state, scoreboard):
+    scoreboard["games"] += 1
+
+    if game_state["status"] == "won":
+        scoreboard["wins"] += 1
+    elif game_state["status"] == "lost":
+        scoreboard["losses"] += 1
+
+    save_scoreboard(scoreboard)
+
 
 def guess_number():
     game_state = {
@@ -68,6 +89,8 @@ def guess_number():
         "attempts_left" : 0,
         "status": "playing"
     }
+
+    scoreboard = load_scoreboard()
 
     wins = 0
     losses = 0
@@ -87,7 +110,11 @@ def guess_number():
 
         print(f"\n📊 Score → Wins: {wins} | Losses: {losses}")
 
-        update_scoreboard(game_state)
+        update_scoreboard(game_state, scoreboard)
+
+        print(f"\n📁 All-time stats → Games: {scoreboard['games']} | "
+              f"Wins: {scoreboard['wins']} | Losses: {scoreboard['losses']}"
+        )
 
         again = input("Play again? (y/n): ").lower()
         if again != "y":
