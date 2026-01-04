@@ -1,5 +1,10 @@
+import random
+
 def choose_difficulty():
-    pass
+    while True:
+        level = input("Choose difficulty (easy / medium / hard): ").lower()
+
+        
 
 def play_round(game_state):
     pass
