@@ -26,15 +26,15 @@ This project is a refined second version focusing on cleaner structure, improved
 ## How to Run
 
 1. Clone the repository
-Bash
-Copy code
-git clone https://github.com/FarhadTorshabi/number-guessing-game-v2.git
-cd number-guessing-game-v2
+- Bash
+- Copy code
+- git clone https://github.com/FarhadTorshabi/number-guessing-game-v2.git
+- cd number-guessing-game-v2
 2. Run the program
-Bash
-Copy code
-python guess-number.py
-Make sure Python 3.x is installed on your system.
+- Bash
+- Copy code
+- python guess-number.py
+- Make sure Python 3.x is installed on your system.
 
 ## Project Structure
 
