@@ -1,8 +1,8 @@
 # 🎯 Number Guessing Game v2
 
-A CLI-based multiplayer number guessing game built with Python.
+A command-line number guessing game written in Python.
 
-This version introduces scalable multiplayer support, persistent score tracking, improved architecture, and clean modular design.
+This project is a refined second version focusing on cleaner structure, improved input validation, and better game flow control. It was developed as part of practicing programming fundamentals, Git workflow, and environment management.
 
 ---
 
@@ -16,25 +16,61 @@ This version introduces scalable multiplayer support, persistent score tracking,
 - 📊 Win/Loss statistics
 - 🧠 Clean modular design with separated logic layers
 - 📝 Type hints and docstrings
+- Random number generation
+- Input validation (handles invalid and non-numeric input)
+- Limited number of attempts
+- Clear win/lose feedback
+- Replay option
+- Modular and readable structure
 
----
+## How to Run
 
-## 🏗 Architecture Overview
+1. Clone the repository
+Bash
+Copy code
+git clone https://github.com/FarhadTorshabi/number-guessing-game-v2.git
+cd number-guessing-game-v2
+2. Run the program
+Bash
+Copy code
+python guess-number.py
+Make sure Python 3.x is installed on your system.
 
-The project is structured into logical layers:
+## Project Structure
 
-- **Game Logic Layer** – handles guessing mechanics and hints
-- **Persistence Layer** – loads and saves scoreboard data
-- **User Interface Layer** – CLI interaction
+Copy code
+number-guessing-game-v2/
+│
+├── guess-number.py
+└── README.md
 
-The scoreboard is designed as a scalable dictionary structure:
+## Version Improvements (v2)
 
-```json
-{
-  "PlayerName": {
-    "games": 0,
-    "wins": 0,
-    "losses": 0,
-    "best_score": null
-  }
-}
+Compared to v1, this version includes:
+Cleaner separation of logic
+Better input handling
+More structured game loop
+Improved user interaction messages
+Proper Git versioning and repository management
+
+## Lessons Learned
+
+Managing Git across different environments (Windows vs WSL)
+Understanding SSL/network issues during git push
+Structuring small programs for clarity and maintainability
+Practicing incremental improvement between versions
+
+## Future Improvements
+
+Add difficulty levels
+Track high scores
+Add logging
+Convert to a simple GUI version
+Package as a small installable CLI tool
+
+## Author
+
+Farhad Torshabi
+GitHub profile on GitHub:
+https://github.com/FarhadTorshabi�
+
