@@ -46,31 +46,31 @@ number-guessing-game-v2/
 
 ## Version Improvements (v2)
 
-Compared to v1, this version includes:
-Cleaner separation of logic
-Better input handling
-More structured game loop
-Improved user interaction messages
-Proper Git versioning and repository management
+- Compared to v1, this version includes:
+- Cleaner separation of logic
+- Better input handling
+- More structured game loop
+- Improved user interaction messages
+- Proper Git versioning and repository management
 
 ## Lessons Learned
 
-Managing Git across different environments (Windows vs WSL)
-Understanding SSL/network issues during git push
-Structuring small programs for clarity and maintainability
-Practicing incremental improvement between versions
+- Managing Git across different environments (Windows vs WSL)
+- Understanding SSL/network issues during git push
+- Structuring small programs for clarity and maintainability
+- Practicing incremental improvement between versions
 
 ## Future Improvements
 
-Add difficulty levels
-Track high scores
-Add logging
-Convert to a simple GUI version
-Package as a small installable CLI tool
+- Add difficulty levels
+- Track high scores
+- Add logging
+- Convert to a simple GUI version
+- Package as a small installable CLI tool
 
 ## Author
 
-Farhad Torshabi
-GitHub profile on GitHub:
-https://github.com/FarhadTorshabi�
+- Farhad Torshabi
+- GitHub profile on GitHub:
+- https://github.com/FarhadTorshabi�
 
